@@ -8,7 +8,7 @@
 import operator
 import unittest
 import functools
-from typing import Callable, List
+from typing import Iterable, Callable
 
 from luna.gateware.test import utils
 
@@ -27,7 +27,7 @@ from .                      import SetupPacket
 class StandardRequestHandler(USBRequestHandler):
     """ Pure-gateware USB setup request handler. Implements the standard requests required for enumeration. """
 
-    def __init__(self, descriptors: DeviceDescriptorCollection, max_packet_size: int = 64, blacklist: List[Callable[[SetupPacket], Value]] = []):
+    def __init__(self, descriptors: DeviceDescriptorCollection, max_packet_size: int = 64, blacklist: Iterable[Callable[[SetupPacket], Value]] = ()):
         """
         Parameters:
             descriptors     -- The DeviceDescriptorCollection that contains our descriptors.
