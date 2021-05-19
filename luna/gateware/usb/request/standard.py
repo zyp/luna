@@ -14,7 +14,8 @@ from usb_protocol.emitters  import DeviceDescriptorCollection
 
 
 from ..usb2.request         import RequestHandlerInterface, USBRequestHandler
-from ..usb2.descriptor      import GetDescriptorHandler
+#from ..usb2.descriptor      import GetDescriptorHandler
+from ..usb2.descriptor_single_memory import GetDescriptorHandlerSingleMemory as GetDescriptorHandler
 from ..stream               import USBInStreamInterface
 from ...stream.generator    import StreamSerializer
 
